@@ -29,6 +29,7 @@ public class Job {
         positionType = aPositionType;
         coreCompetency = aCoreCompetency;
     }
+
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
@@ -49,46 +50,58 @@ public class Job {
     //  and id.
 
     public String getName() {
-        return name;
+        return " " + name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public Employer getEmployer() {
-        return employer;
+    public String getEmployer() {
+        return " " + employer;
     }
 
     public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
-    public Location getLocation() {
-        return location;
+    public String getLocation() {
+        return " "  + location;
     }
 
     public void setLocation(Location location) {
         this.location = location;
     }
 
-    public PositionType getPositionType() {
-        return positionType;
+    public String getPositionType() {
+        return " " + positionType;
     }
 
     public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
 
-    public CoreCompetency getCoreCompetency() {
-        return coreCompetency;
+    public String getCoreCompetency() {
+        return " " + coreCompetency;
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
 
-    public int getId() {
-        return id;
+    public String getId() {
+        return " " + id;
     }
+
+    @Override
+    public String toString() {
+        return "ID:" + getId() + " " + "\n" +
+                "Name:" + getName() + " " + "\n" +
+                "Employer:" + getEmployer() + " " + "\n" +
+                "Location:" + getLocation() + " " + "\n" +
+                "Position Type:" + getPositionType() + " " + "\n" +
+                "Core Competency:" + getCoreCompetency() + "\n";
+
+    }
+
 }

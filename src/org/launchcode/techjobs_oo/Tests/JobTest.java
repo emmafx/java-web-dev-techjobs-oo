@@ -17,22 +17,22 @@ public class JobTest {
     public void testSettingJobId() {
         assertFalse(softwareDeveloper.getId(), javaDeveloper.getId(), false);
     }
-    private void assertFalse(int id, int id1, boolean b) {
+    private void assertFalse(String id, String id1, boolean b) {
     }
 
     @Test
     public void checkingForUniqueIds() {
-        assertEquals(softwareDeveloper.getId(), 1);
-        assertEquals(javaDeveloper.getId(), 2);
+        assertEquals(softwareDeveloper.getId(), " 1");
+        assertEquals(javaDeveloper.getId(),  " 2");
     }
 
     @Test
     public void testJobConstructorSetsAllFields() {
-        assertEquals(newJob.getEmployer().toString(),"ACME");
-        assertEquals(newJob.getLocation().toString(), "Desert");
-        assertEquals(newJob.getPositionType().toString(), "Quality Control");
-        assertEquals(newJob.getCoreCompetency().toString(), "Persistence");
-        assertEquals(newJob.getName().toString(), "Product tester");
+        assertEquals(newJob.getEmployer().toString()," ACME");
+        assertEquals(newJob.getLocation().toString(), " Desert");
+        assertEquals(newJob.getPositionType().toString(), " Quality Control");
+        assertEquals(newJob.getCoreCompetency().toString(), " Persistence");
+        assertEquals(newJob.getName().toString(), " Product tester");
     }
 
     @Test
@@ -46,6 +46,11 @@ public class JobTest {
         assertEquals(devOps.getName(), devOps2.getName());
     }
 
+    @Test
+    public void shouldReturnABlankLine() {
+        assertEquals(newJob.getName(), " Product tester");
+
+    }
 
 
 }
