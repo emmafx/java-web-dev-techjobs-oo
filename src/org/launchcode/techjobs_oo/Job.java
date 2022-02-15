@@ -23,11 +23,11 @@ public class Job {
 
     public Job(String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency) {
         this();
-        name = aName;
-        employer = aEmployer;
-        location = aLocation;
-        positionType = aPositionType;
-        coreCompetency = aCoreCompetency;
+        this.name = aName;
+        this.employer = aEmployer;
+        this.location = aLocation;
+        this.positionType = aPositionType;
+        this.coreCompetency = aCoreCompetency;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
@@ -50,58 +50,77 @@ public class Job {
     //  and id.
 
     public String getName() {
-        return " " + name;
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getEmployer() {
-        return " " + employer;
+    public Employer getEmployer() {
+        return employer;
     }
 
     public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
-    public String getLocation() {
-        return " "  + location;
+    public Location getLocation() {
+        return location;
     }
 
     public void setLocation(Location location) {
         this.location = location;
     }
 
-    public String getPositionType() {
-        return " " + positionType;
+    public PositionType getPositionType() {
+        return positionType;
     }
 
     public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
 
-    public String getCoreCompetency() {
-        return " " + coreCompetency;
+    public CoreCompetency getCoreCompetency() {
+       return coreCompetency;
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
 
-    public String getId() {
-        return " " + id;
+    public int getId() {
+        return id;
     }
 
     @Override
     public String toString() {
-        return "ID:" + getId() + " " + "\n" +
-                "Name:" + getName() + " " + "\n" +
-                "Employer:" + getEmployer() + " " + "\n" +
-                "Location:" + getLocation() + " " + "\n" +
-                "Position Type:" + getPositionType() + " " + "\n" +
-                "Core Competency:" + getCoreCompetency() + "\n";
+        if (this.getName() == null && this.getEmployer() == null && this.getLocation() == null && this.getPositionType() == null && this.getCoreCompetency() == null) {
+            return "OOPS! This job does not seem to exist.";
+        }
+        if (this.getName() == "") {
+            name = "Data not available";
+        }
+        if (this.getEmployer().equals(" ")) {
+            employer = new Employer("Data not available");
+        }
+        if (this.getLocation().equals(" ")) {
+            location = new Location(("Data not available"));
+        }
+        if (this.getPositionType().equals(" ")) {
+            positionType = new PositionType("Data not available");
+        }
+        if (this.getCoreCompetency().equals(" ")) {
+            coreCompetency = new CoreCompetency("Data not available");
+        }
+        return "\n" +
+                    "ID: " + getId() + " " + "\n" +
+                    "Name: " + this.getName() + " " + "\n" +
+                    "Employer: " + this.getEmployer() + " " + "\n" +
+                    "Location: " + this.getLocation() + " " + "\n" +
+                    "Position Type: " + this.getPositionType() + " " + "\n" +
+                    "Core Competency: " + this.getCoreCompetency() + "\n";
 
+        }
     }
 
-}
