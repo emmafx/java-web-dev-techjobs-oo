@@ -70,11 +70,11 @@ public class JobTest {
     String newStringJob = newJob.toString();
 
         assertTrue(newStringJob.contains("\n" +
-                "ID: " + newJob.getId() + " " + "\n" +
-                "Name: " + newJob.getName() + " " + "\n" +
-                "Employer: " + newJob.getEmployer() + " " + "\n" +
-                "Location: " + newJob.getLocation() + " " + "\n" +
-                "Position Type: " + newJob.getPositionType() + " " + "\n" +
+                "ID: " + newJob.getId() + "\n" +
+                "Name: " + newJob.getName()+ "\n" +
+                "Employer: " + newJob.getEmployer() + "\n" +
+                "Location: " + newJob.getLocation() + "\n" +
+                "Position Type: " + newJob.getPositionType() + "\n" +
                 "Core Competency: " + newJob.getCoreCompetency() + "\n"));
     }
 

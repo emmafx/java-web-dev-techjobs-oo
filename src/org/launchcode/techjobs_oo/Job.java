@@ -101,24 +101,24 @@ public class Job {
         if (this.getName() == "") {
             name = "Data not available";
         }
-        if (this.getEmployer().equals(" ")) {
-            employer = new Employer("Data not available");
+        if (this.getEmployer().getValue().isEmpty()) {
+            this.getEmployer().setValue("Data not available");
         }
-        if (this.getLocation().equals(" ")) {
-            location = new Location(("Data not available"));
+        if (this.getLocation().getValue().isEmpty()) {
+            this.getLocation().setValue("Data not available");
         }
-        if (this.getPositionType().equals(" ")) {
-            positionType = new PositionType("Data not available");
+        if (this.getPositionType().getValue().isEmpty()) {
+            this.getPositionType().setValue("Data not available");
         }
-        if (this.getCoreCompetency().equals(" ")) {
-            coreCompetency = new CoreCompetency("Data not available");
+        if(this.getCoreCompetency().getValue().isEmpty()) {
+            this.getCoreCompetency().setValue("Data not available");
         }
         return "\n" +
-                    "ID: " + getId() + " " + "\n" +
-                    "Name: " + this.getName() + " " + "\n" +
-                    "Employer: " + this.getEmployer() + " " + "\n" +
-                    "Location: " + this.getLocation() + " " + "\n" +
-                    "Position Type: " + this.getPositionType() + " " + "\n" +
+                    "ID: " + getId() + "\n" +
+                    "Name: " + this.getName() + "\n" +
+                    "Employer: " + this.getEmployer() + "\n" +
+                    "Location: " + this.getLocation() + "\n" +
+                    "Position Type: " + this.getPositionType() + "\n" +
                     "Core Competency: " + this.getCoreCompetency() + "\n";
 
         }
